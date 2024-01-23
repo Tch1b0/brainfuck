@@ -1,4 +1,4 @@
-package encapsulator
+package blocks
 
 import "github.com/Tch1b0/brainfuck-interpreter/internal/token"
 

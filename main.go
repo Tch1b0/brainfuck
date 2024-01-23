@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/Tch1b0/brainfuck-interpreter/internal/encapsulator"
+	"github.com/Tch1b0/brainfuck-interpreter/internal/blocks"
 	"github.com/Tch1b0/brainfuck-interpreter/internal/interpreter"
 	"github.com/Tch1b0/brainfuck-interpreter/internal/token"
 )
@@ -34,7 +34,7 @@ func main() {
 		return
 	}
 
-	block, _ := encapsulator.BuildBlock(tokens)
+	block, _ := blocks.BuildBlock(tokens)
 
 	interpreter.Execute(block, true)
 

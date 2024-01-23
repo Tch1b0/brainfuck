@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/Tch1b0/brainfuck-interpreter/internal/encapsulator"
+	"github.com/Tch1b0/brainfuck-interpreter/internal/blocks"
 	"github.com/Tch1b0/brainfuck-interpreter/internal/token"
 )
 
@@ -13,10 +13,10 @@ var (
 	DP     = 0
 )
 
-func Execute(block encapsulator.Block, topLevel bool) {
+func Execute(block blocks.Block, topLevel bool) {
 	for {
 		for _, act := range block.Actions {
-			if act.Type == encapsulator.ACT_BLOCK {
+			if act.Type == blocks.ACT_BLOCK {
 				Execute(*act.Block, false)
 				continue
 			}
